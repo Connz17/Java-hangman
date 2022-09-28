@@ -11,37 +11,39 @@ public class Main {
         Pattern numbers = Pattern.compile("[0-9]");
 
         Scanner scanner = new Scanner(System.in);
+
         int lives = 5;
 
         StringBuilder lettersGuessed = new StringBuilder();
 
+        System.out.println("Welcome to the JAVA Hangman game!! \nCan you guess all the letters and reveal the word?");
+
         //pull random word from Arraylist
         String word = Words.generateWord();
         System.out.println(word);
-
 
         String[] answer = word.split("").clone();
         String[] hiddenWord = new String[word.length()];
         Arrays.fill(hiddenWord, "_");
         System.out.println(Arrays.toString(hiddenWord));
 
-        System.out.println("Welcome to the JAVA Hangman game.");
-        System.out.println("\n You have " + lives + " lives");
+
+        System.out.println("\nYou have " + lives + " lives");
 
         while (lives > 0 && Arrays.toString(hiddenWord).contains("_")){
 
 
-            System.out.println( " \n what is your guess??");
+            System.out.println("\nwhat is your guess??");
             String guess = scanner.nextLine();
             Matcher matcher = numbers.matcher(guess);
             boolean matchFound = matcher.find();
 
             if (lettersGuessed.toString().contains(guess)){
-                System.out.println("You have already picked this letter");
+                System.out.println(guess + "? You have already picked this letter. Try another one");
                 continue;
 
             } else if (matchFound) {
-            System.out.println("You can't use numbers");
+            System.out.println("You can't use numbers, have another go");
             continue;
 
             } else if (guess.length() > 1) {
@@ -71,12 +73,14 @@ public class Main {
             if (Arrays.toString(hiddenWord).contains("_")){
 
             } else {
-            System.out.println("\n Congratulations!!!!!!! \n You have won!!! And with " + lives + " lives remaining!");
+            System.out.println("\nCongratulations!!!!!!! \nYou have won!!! And with " + lives + " lives remaining!");
             }
 
     }
-
-        System.out.println("\n Do you want to play again? type Y or N");
+        if (lives == 0){
+            System.out.println("\nAhh unlucky, seems like you lost this one");
+        }
+        System.out.println("\nDo you want to play again? type Y or N");
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("Y")){
             Main.main(args);
