@@ -12,7 +12,21 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        int lives = 5;
+        int lives = 0;
+        System.out.println("What level would you lke to start at, Select a number: \nEasy = 1 \nNormal = 2 \nHard = 3");
+        int level = scanner.nextInt();
+        switch (level){
+            case 1:
+                lives = 7;
+                break;
+            case 2:
+                lives = 5;
+                break;
+            case 3:
+                lives = 3;
+                break;
+        }
+
 
         StringBuilder lettersGuessed = new StringBuilder();
 

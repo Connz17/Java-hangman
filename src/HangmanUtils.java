@@ -1,4 +1,4 @@
-//checking words
+//doing jobs i.e. checking words, checking win, checking loss
 
 public class HangmanUtils {
 
