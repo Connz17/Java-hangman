@@ -1,3 +1,4 @@
 public class Hangman {
-    //scanner, lives, target word, dashes, while loop
+    // target word, game while loop
+
 }

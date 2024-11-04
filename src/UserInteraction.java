@@ -1,4 +1,4 @@
 public class UserInteraction {
-    //display messages to user
+    //display messages to user, scanner
 
 }

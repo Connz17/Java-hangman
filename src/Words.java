@@ -21,6 +21,12 @@ public class Words {
         words.add("milkshake");
         words.add("playstation");
         words.add("horizon");
+        words.add("reading");
+        words.add("movie");
+        words.add("bottle");
+        words.add("alcohol");
+        words.add("family");
+        words.add("master");
 
 
     }

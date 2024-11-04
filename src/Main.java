@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.*;
 
-
+//refactor game
 
 public class Main {
 
@@ -25,6 +25,9 @@ public class Main {
             case 3:
                 lives = 3;
                 break;
+            default:
+                System.err.println("Please Choose either 1, 2, or 3");
+                Main.main(args);
         }
 
 
@@ -36,6 +39,7 @@ public class Main {
         String word = Words.generateWord();
         System.out.println(word);
 
+        // Create a function for this
         String[] answer = word.split("").clone();
         String[] hiddenWord = new String[word.length()];
         Arrays.fill(hiddenWord, "_");
@@ -100,7 +104,6 @@ public class Main {
             Main.main(args);
         } else {
             System.exit(0);
-
         }
     }
 
